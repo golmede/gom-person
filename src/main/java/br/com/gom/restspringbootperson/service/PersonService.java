@@ -22,7 +22,6 @@ public class PersonService {
     public List<PersonResponseDTO> findAll() {
         return personRepository.findAll()
                 .stream()
-//                .map(PersonConverter::converterPersonEntityToPersonResponseDTO)
                 .map(p -> personConverter.converterPersonEntityToPersonResponseDTO(p))
                 .collect(Collectors.toList());
     }
@@ -33,7 +32,6 @@ public class PersonService {
                         personRepository.findById(id)
                                 .orElseThrow(() ->
                                         new NotFoundException("No record found for this ID")));
-        // TODO: 06/10/2021 Por que no projeto do sijud lanca um throw new e aqui apenas o new?
     }
 
     public PersonResponseDTO create(PersonRequestDTO personRequestDTO) {

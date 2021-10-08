@@ -48,4 +48,5 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
                         HttpStatus.NOT_FOUND.toString());
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
+
 }

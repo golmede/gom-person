@@ -4,6 +4,7 @@ import br.com.gom.restspringbootperson.dto.PersonRequestDTO;
 import br.com.gom.restspringbootperson.dto.PersonResponseDTO;
 import br.com.gom.restspringbootperson.service.PersonService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,6 @@ public class PersonController {
 
     @GetMapping
     public ResponseEntity<List<PersonResponseDTO>> findAll() {
-//        return new ResponseEntity<>(personService.findAll(), HttpStatus.OK);
         return ResponseEntity
                 .ok(personService.findAll());
     }

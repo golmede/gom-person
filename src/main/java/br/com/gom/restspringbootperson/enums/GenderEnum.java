@@ -1,7 +1,15 @@
 package br.com.gom.restspringbootperson.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public enum GenderEnum {
 
-    MALE, FEMALE;
+    M("Male"),
+    F("Female");
+
+    private String gender;
 
 }
