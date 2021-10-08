@@ -1,7 +1,7 @@
-package br.com.gom.restspringbootperson.handler;
+package br.com.gom.person.handler;
 
-import br.com.gom.restspringbootperson.exception.ExceptionResponse;
-import br.com.gom.restspringbootperson.exception.NotFoundException;
+import br.com.gom.person.exception.ExceptionResponse;
+import br.com.gom.person.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

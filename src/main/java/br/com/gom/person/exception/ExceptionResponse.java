@@ -1,4 +1,4 @@
-package br.com.gom.restspringbootperson.exception;
+package br.com.gom.person.exception;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,6 +1,6 @@
-package br.com.gom.restspringbootperson.repository;
+package br.com.gom.person.repository;
 
-import br.com.gom.restspringbootperson.model.PersonEntity;
+import br.com.gom.person.model.PersonEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

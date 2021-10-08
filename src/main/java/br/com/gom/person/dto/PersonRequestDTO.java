@@ -1,6 +1,6 @@
-package br.com.gom.restspringbootperson.dto;
+package br.com.gom.person.dto;
 
-import br.com.gom.restspringbootperson.enums.GenderEnum;
+import br.com.gom.person.enums.GenderEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package br.com.gom.restspringbootperson.configuration;
+package br.com.gom.person.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

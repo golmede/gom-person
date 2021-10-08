@@ -1,4 +1,4 @@
-package br.com.gom.restspringbootperson.exception;
+package br.com.gom.person.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

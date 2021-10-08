@@ -1,10 +1,9 @@
-package br.com.gom.restspringbootperson.controller;
+package br.com.gom.person.controller;
 
-import br.com.gom.restspringbootperson.dto.PersonRequestDTO;
-import br.com.gom.restspringbootperson.dto.PersonResponseDTO;
-import br.com.gom.restspringbootperson.service.PersonService;
+import br.com.gom.person.dto.PersonRequestDTO;
+import br.com.gom.person.dto.PersonResponseDTO;
+import br.com.gom.person.service.PersonService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

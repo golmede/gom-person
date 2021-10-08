@@ -1,6 +1,6 @@
-package br.com.gom.restspringbootperson.model;
+package br.com.gom.person.model;
 
-import br.com.gom.restspringbootperson.enums.GenderEnum;
+import br.com.gom.person.enums.GenderEnum;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

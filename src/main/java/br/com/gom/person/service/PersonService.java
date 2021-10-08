@@ -1,11 +1,11 @@
-package br.com.gom.restspringbootperson.service;
+package br.com.gom.person.service;
 
-import br.com.gom.restspringbootperson.converter.PersonConverter;
-import br.com.gom.restspringbootperson.dto.PersonRequestDTO;
-import br.com.gom.restspringbootperson.dto.PersonResponseDTO;
-import br.com.gom.restspringbootperson.exception.NotFoundException;
-import br.com.gom.restspringbootperson.model.PersonEntity;
-import br.com.gom.restspringbootperson.repository.PersonRepository;
+import br.com.gom.person.converter.PersonConverter;
+import br.com.gom.person.dto.PersonRequestDTO;
+import br.com.gom.person.dto.PersonResponseDTO;
+import br.com.gom.person.exception.NotFoundException;
+import br.com.gom.person.model.PersonEntity;
+import br.com.gom.person.repository.PersonRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package br.com.gom.restspringbootperson.converter;
+package br.com.gom.person.converter;
 
-import br.com.gom.restspringbootperson.enums.GenderEnum;
+import br.com.gom.person.enums.GenderEnum;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

@@ -1,4 +1,4 @@
-package br.com.gom.restspringbootperson.dto;
+package br.com.gom.person.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

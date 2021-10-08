@@ -1,8 +1,8 @@
-package br.com.gom.restspringbootperson.converter;
+package br.com.gom.person.converter;
 
-import br.com.gom.restspringbootperson.dto.PersonRequestDTO;
-import br.com.gom.restspringbootperson.dto.PersonResponseDTO;
-import br.com.gom.restspringbootperson.model.PersonEntity;
+import br.com.gom.person.dto.PersonRequestDTO;
+import br.com.gom.person.dto.PersonResponseDTO;
+import br.com.gom.person.model.PersonEntity;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
