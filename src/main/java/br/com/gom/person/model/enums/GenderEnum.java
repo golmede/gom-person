@@ -1,4 +1,4 @@
-package br.com.gom.person.enums;
+package br.com.gom.person.model.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

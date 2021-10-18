@@ -1,4 +1,4 @@
-package br.com.gom.person.dto;
+package br.com.gom.person.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonResponseDTO extends PersonRequestDTO {
+public class PersonResponseDTO extends PersonDTO {
 
     private Long id;
 

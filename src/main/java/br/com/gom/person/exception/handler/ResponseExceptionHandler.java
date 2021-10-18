@@ -1,5 +1,6 @@
-package br.com.gom.person.handler;
+package br.com.gom.person.exception.handler;
 
+import br.com.gom.person.exception.BadRequestException;
 import br.com.gom.person.exception.ExceptionResponse;
 import br.com.gom.person.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,17 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(UnsupportedOperationException.class)
+    public final ResponseEntity<ExceptionResponse> handleUnsupportedOperationException(Exception exception, WebRequest request) {
+        ExceptionResponse exceptionResponse =
+                new ExceptionResponse(
+                        new Date(),
+                        exception.getMessage(),
+                        request.getDescription(false),
+                        HttpStatus.BAD_REQUEST.toString());
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(BadRequestException.class)
     public final ResponseEntity<ExceptionResponse> handleBadRequestException(Exception exception, WebRequest request) {
         ExceptionResponse exceptionResponse =
                 new ExceptionResponse(

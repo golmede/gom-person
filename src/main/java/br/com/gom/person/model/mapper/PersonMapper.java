@@ -1,15 +1,15 @@
-package br.com.gom.person.converter;
+package br.com.gom.person.model.mapper;
 
-import br.com.gom.person.dto.PersonRequestDTO;
-import br.com.gom.person.dto.PersonResponseDTO;
-import br.com.gom.person.model.PersonEntity;
+import br.com.gom.person.model.dto.PersonDTO;
+import br.com.gom.person.model.dto.PersonResponseDTO;
+import br.com.gom.person.model.entity.PersonEntity;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class PersonConverter {
+public class PersonMapper {
 
     private ModelMapper mapper;
 
@@ -17,8 +17,8 @@ public class PersonConverter {
         return mapper.map(personEntity, PersonResponseDTO.class);
     }
 
-    public PersonEntity converterPersonRequestDTOToPersonEntity(PersonRequestDTO personRequestDTO) {
-        return mapper.map(personRequestDTO, PersonEntity.class);
+    public PersonEntity converterPersonRequestDTOToPersonEntity(PersonDTO personDTO) {
+        return mapper.map(personDTO, PersonEntity.class);
     }
 
     public PersonEntity converterPersonResponseDTOToPersonEntity(PersonResponseDTO personReesposeDTO) {

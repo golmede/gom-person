@@ -1,13 +1,13 @@
-package br.com.gom.person.converter;
+package br.com.gom.person.model.mapper;
 
-import br.com.gom.person.enums.GenderEnum;
+import br.com.gom.person.model.enums.GenderEnum;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.util.stream.Stream;
 
 @Converter(autoApply = true)
-public class GenderConverter implements AttributeConverter<GenderEnum, String> {
+public class GenderMapper implements AttributeConverter<GenderEnum, String> {
 
 
     @Override

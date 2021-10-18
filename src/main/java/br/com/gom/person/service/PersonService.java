@@ -1,10 +1,10 @@
 package br.com.gom.person.service;
 
-import br.com.gom.person.converter.PersonConverter;
-import br.com.gom.person.dto.PersonRequestDTO;
-import br.com.gom.person.dto.PersonResponseDTO;
 import br.com.gom.person.exception.NotFoundException;
-import br.com.gom.person.model.PersonEntity;
+import br.com.gom.person.model.dto.PersonDTO;
+import br.com.gom.person.model.dto.PersonResponseDTO;
+import br.com.gom.person.model.entity.PersonEntity;
+import br.com.gom.person.model.mapper.PersonMapper;
 import br.com.gom.person.repository.PersonRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,40 +17,40 @@ import java.util.stream.Collectors;
 public class PersonService {
 
     private PersonRepository personRepository;
-    private PersonConverter personConverter;
+    private PersonMapper personMapper;
 
     public List<PersonResponseDTO> findAll() {
         return personRepository.findAll()
                 .stream()
-                .map(p -> personConverter.converterPersonEntityToPersonResponseDTO(p))
+                .map(p -> personMapper.converterPersonEntityToPersonResponseDTO(p))
                 .collect(Collectors.toList());
     }
 
     public PersonResponseDTO findById(Long id) {
-        return personConverter.
+        return personMapper.
                 converterPersonEntityToPersonResponseDTO(
                         personRepository.findById(id)
                                 .orElseThrow(() ->
                                         new NotFoundException("No record found for this ID")));
     }
 
-    public PersonResponseDTO create(PersonRequestDTO personRequestDTO) {
-        return personConverter.
+    public PersonResponseDTO create(PersonDTO personDTO) {
+        return personMapper.
                 converterPersonEntityToPersonResponseDTO(
-                        personRepository.save(personConverter.converterPersonRequestDTOToPersonEntity(
-                                personRequestDTO)));
+                        personRepository.save(personMapper.converterPersonRequestDTOToPersonEntity(
+                                personDTO)));
     }
 
-    public PersonResponseDTO update(Long id, PersonRequestDTO personRequestDTO) {
-        PersonEntity personEntityOld = personConverter.
+    public PersonResponseDTO update(Long id, PersonDTO personDTO) {
+        PersonEntity personEntityOld = personMapper.
                 converterPersonResponseDTOToPersonEntity(this.findById(id));
-        PersonEntity personEntityNew = personConverter.
-                converterPersonRequestDTOToPersonEntity(personRequestDTO);
+        PersonEntity personEntityNew = personMapper.
+                converterPersonRequestDTOToPersonEntity(personDTO);
         personEntityOld.setFirstName(personEntityNew.getFirstName());
         personEntityOld.setLastName(personEntityNew.getLastName());
         personEntityOld.setAddress(personEntityNew.getAddress());
         personEntityOld.setGender(personEntityNew.getGender());
-        return personConverter.converterPersonEntityToPersonResponseDTO(
+        return personMapper.converterPersonEntityToPersonResponseDTO(
                 personRepository.save(personEntityOld));
     }
 

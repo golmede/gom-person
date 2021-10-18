@@ -1,19 +1,24 @@
 package br.com.gom.person.controller;
 
-import br.com.gom.person.dto.PersonRequestDTO;
-import br.com.gom.person.dto.PersonResponseDTO;
+import br.com.gom.person.model.dto.PersonDTO;
+import br.com.gom.person.model.dto.PersonResponseDTO;
 import br.com.gom.person.service.PersonService;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "/person")
 @AllArgsConstructor
+@NoArgsConstructor
 public class PersonController {
 
+    @Autowired
     private PersonService personService;
 
     @GetMapping
@@ -29,16 +34,16 @@ public class PersonController {
     }
 
     @PostMapping
-    public ResponseEntity<PersonResponseDTO> create(@RequestBody PersonRequestDTO personRequestDTO) {
+    public ResponseEntity<PersonResponseDTO> create(@Valid @RequestBody PersonDTO personDTO) {
         return ResponseEntity
-                .ok(personService.create(personRequestDTO));
+                .ok(personService.create(personDTO));
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<PersonResponseDTO> update(@PathVariable(name = "id") Long id,
-                                                    @RequestBody PersonRequestDTO personRequestDTO) {
+    public ResponseEntity<PersonResponseDTO> update(@PathVariable(name = "id") @Valid Long id,
+                                                    @RequestBody PersonDTO personDTO) {
         return ResponseEntity
-                .ok(personService.update(id, personRequestDTO));
+                .ok(personService.update(id, personDTO));
     }
 
     @DeleteMapping(path = "/{id}")
