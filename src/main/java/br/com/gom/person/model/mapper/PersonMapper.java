@@ -5,9 +5,9 @@ import br.com.gom.person.model.dto.PersonResponseDTO;
 import br.com.gom.person.model.entity.PersonEntity;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @AllArgsConstructor
 public class PersonMapper {
 

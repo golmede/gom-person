@@ -34,7 +34,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public ResponseEntity<PersonResponseDTO> create(@Valid @RequestBody PersonDTO personDTO) {
+    public ResponseEntity<PersonResponseDTO> create(@RequestBody @Valid PersonDTO personDTO) {
         return ResponseEntity
                 .ok(personService.create(personDTO));
     }
