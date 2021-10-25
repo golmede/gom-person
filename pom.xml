@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.gom</groupId>
-    <artifactId>rest-springboot-calc</artifactId>
+    <artifactId>gom-person</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rest-springboot-calc</name>
-    <description>Rest API for Calculator</description>
+    <name>gom-person</name>
+    <description>Rest API Person</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -47,6 +47,23 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.hateoas</groupId>
+            <artifactId>spring-hateoas</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
         </dependency>
 
         <dependency>

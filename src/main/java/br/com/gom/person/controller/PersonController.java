@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/person")
+@RequestMapping(path = "/person/v1")
 @AllArgsConstructor
 @NoArgsConstructor
 public class PersonController {
